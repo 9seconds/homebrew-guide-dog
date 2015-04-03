@@ -7,9 +7,9 @@ MAINTAINER 9seconds <nineseconds@yandex.ru>
 RUN brew update && brew upgrade
 
 # Add repository as a tap and inject current directory.
-RUN brew tap 9seconds/homebrew-guide-dog && \
-    rm -rf /home/linuxbrew/.linuxbrew/Library/Taps/9seconds/homebrew-guide-dog
-ADD . /home/linuxbrew/.linuxbrew/Library/Taps/9seconds/homebrew-guide-dog
+RUN brew tap 9seconds/homebrew-guidedog && \
+    rm -rf /home/linuxbrew/.linuxbrew/Library/Taps/9seconds/homebrew-guidedog
+ADD . /home/linuxbrew/.linuxbrew/Library/Taps/9seconds/homebrew-guidedog
 
 # Do all possible installations.
-#RUN brew install -vd guidedog --HEAD
+RUN brew install -vd --HEAD guidedog

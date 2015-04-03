@@ -3,11 +3,11 @@
 
 
 class Guidedog < Formula
-  homepage "https://github.com/9seconds/guide-dog"
+  homepage "https://github.com/9seconds/guidedog"
   # url "https://github.com/9seconds/guide-dog.git", using: :git, :tag => "0.1"
   sha1 ""
 
-  head "https://github.com/9seconds/guide-dog.git", using: :git
+  head "https://github.com/9seconds/guidedog.git", using: :git
 
   bottle do
     sha1 "7563b28df830baa880731b9448e88b99dcb68420" => :mavericks
@@ -24,15 +24,15 @@ class Guidedog < Formula
       ENV.prepend_path "PATH", "#{dir}/bin"
 
       mkdir_p "#{dir}/src/github.com/9seconds"
-      File.symlink(Dir.pwd, "#{dir}/src/github.com/9seconds/guide-dog")
+      File.symlink(Dir.pwd, "#{dir}/src/github.com/9seconds/guidedog")
 
       system "make", "build"
 
-      bin.install "guide-dog"
+      bin.install "guidedog"
     end
   end
 
   test do
-    system "#{bin}/guide-dog", "--version"
+    system "#{bin}/guidedog", "--version"
   end
 end
